@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/rangle/batarangle",
   "scripts": {
-    "postinstall": "tsd install"
+    "postinstall": "tsd install",
+    "build": "gulp build",
+    "start": "gulp dev"
   },
   "dependencies": {
     "@reactivex/rxjs": "5.0.0-alpha.4",

@@ -1,6 +1,6 @@
 import {getComponentContents} from './batarangle/component-inspector/component-inspector';
 
-/** 
+/**
  * Create Component Inspector sidebar pane on the Element panel
  * on Chrome Development Tools window.
 */

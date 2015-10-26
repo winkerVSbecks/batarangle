@@ -10,7 +10,7 @@ chrome.runtime.onConnect.addListener(port => {
       connections.set(message.tabId, port);
       return;
     }
-    
+
     if (connections.has(message.tabId)) {
       chrome.tabs.sendMessage(message.tabId, message);
       console.log('Channel: Got Message from Frontend', message, sender, port);
@@ -42,11 +42,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (connections.has(sender.tab.id)) {
       console.log('Channel: Sending message to Frontend', message, sender, sendResponse);
       connections.get(sender.tab.id).postMessage(message);
-    } 
+    }
     else {
       console.log("Tab not found in connection list.");
     }
-  } 
+  }
   else {
     console.log("sender.tab not defined.");
   }

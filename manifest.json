@@ -19,7 +19,7 @@
     "run_at": "document_end"
   }],
   "web_accessible_resources": [
-    "node_modules/*", 
+    "node_modules/*",
     "app/js/batarangle/backend/*"
   ],
   "manifest_version": 2,
