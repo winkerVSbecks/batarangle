@@ -76,6 +76,7 @@ module.exports = {
       'angular2/core',
       'angular2/router',
       'angular2/http',
+      'json-formatter-js',
       './frontend/batarangle'
     ],
     'devtools': ['./devtools'],
