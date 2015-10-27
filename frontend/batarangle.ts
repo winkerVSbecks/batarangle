@@ -54,21 +54,3 @@ bootstrap(App, [
   ComponentDataStore,
   BackendMessagingService
 ]);
-
-// @Component({
-//   selector: 'bt-app'
-// })
-// @View({
-//   directives: [],
-//   template: '<h1>Angular 2 App!</h1>'
-// })
-
-// class App {
-
-//   constructor() {
-//     console.log('Application 🚀');
-//   }
-
-// }
-
-// bootstrap(App, []);

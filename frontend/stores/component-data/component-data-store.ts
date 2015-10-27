@@ -61,10 +61,10 @@ export class ComponentDataStore extends AbstractStore {
    */
   private selectNode({ node }: Node) {
 
-      this.emitChange({
-        selectedNode: node,
-        componentData: this._componentData
-      });
+    this.emitChange({
+      selectedNode: node,
+      componentData: this._componentData
+    });
 
   }
 

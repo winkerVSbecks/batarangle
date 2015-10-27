@@ -33,11 +33,9 @@ export class NodeItem {
 
     // Listen for changes to selected node
     this.componentDataStore.dataStream
-      // .pluck('selectedNode')
       .map(({ selectedNode }: any) => selectedNode)
-      .distinctUntilChanged((selectedNode: any) => {
-        return selectedNode ? selectedNode.id : '';
-      })
+      .filter((selectedNode: any) => selectedNode && selectedNode.id)
+      .distinctUntilKeyChanged('id')
       .subscribe((selectedNode: any) => {
         const isSelected = this.node && selectedNode &&
           selectedNode.id === this.node.id;
@@ -53,7 +51,7 @@ export class NodeItem {
   update(isSelected) {
     this.isSelected = isSelected;
     this.borderColor = isSelected ? '#0074D9' :
-          'rgba(0, 0, 0, 0.125)';
+      'rgba(0, 0, 0, 0.125)';
     this.color = isSelected ? '#222' : '#888';
   }
 
