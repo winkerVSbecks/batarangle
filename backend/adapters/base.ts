@@ -28,6 +28,7 @@
  */
 
 //import { Subject } from 'rx';
+import * as Rx from '@reactiveX/rxjs';
 import { AdapterEventType as EventType } from './event_types';
 
 
@@ -59,7 +60,7 @@ export class BaseAdapter {
       node: rootEl,
     };
 
-    this._stream.onNext(rootEvt);
+    this._stream.next(rootEvt);
   }
 
   addChild(childEl: Element): void {
@@ -68,7 +69,7 @@ export class BaseAdapter {
       node: childEl,
     };
 
-    this._stream.onNext(childEvt);
+    this._stream.next(childEvt);
   }
 
   changeComponent(el: Element): void {
@@ -77,7 +78,7 @@ export class BaseAdapter {
       node: el,
     };
 
-    this._stream.onNext(childEvt);
+    this._stream.next(childEvt);
   }
 
   removeRoot(el: Element): void {
@@ -86,7 +87,7 @@ export class BaseAdapter {
       node: el,
     };
 
-    this._stream.onNext(rootEvt);
+    this._stream.next(rootEvt);
   }
 
   removeChild(el: Element): void {
@@ -95,7 +96,7 @@ export class BaseAdapter {
       node: el,
     };
 
-    this._stream.onNext(childEvt);
+    this._stream.next(childEvt);
   }
 
   reset(): void {
@@ -103,7 +104,7 @@ export class BaseAdapter {
       type: EventType.CLEAR,
     }
 
-    this._stream.onNext(evt);
+    this._stream.next(evt);
   }
 
   subscribe(next?: Function, err?: Function, done?: Function): void {
@@ -111,7 +112,7 @@ export class BaseAdapter {
   }
 
   unsubscribe() {
-    this._stream.onCompleted();
+    this._stream.complete();
   }
 
   // TODO(bertrandk): Make below functions abstract.

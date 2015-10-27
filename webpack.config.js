@@ -50,7 +50,7 @@ module.exports = {
     colors: true,
     historyApiFallback: true,
     contentBase: '',
-    publicPath: '/__build__'
+    publicPath: '/build__'
   },
 
   //
@@ -66,24 +66,17 @@ module.exports = {
       'angular2/router',
       'angular2/http'
     ],
-    'app': [
-      // App
-
-      // './examples/  /bootstrap' <-- view examples
-
-      // './examples/rx-autosuggest/bootstrap'
-      // './examples/rx-draggable/bootstrap'
-      // './examples/rx-timeflies/bootstrap'
-      // './examples/simple-component/bootstrap'
-      // './examples/simple-todo/bootstrap'
-
-      './frontend/batarangle'
-    ]
+    'app': ['./frontend/batarangle'],
+    'backend': [
+      './backend/batarangle-backend'
+    ],
+    'channel': ['channel/channel'],
+    'getComponentContents':['component-inspector/component-inspector']
   },
 
   // Config for our build files
   output: {
-    path: root('__build__'),
+    path: root('build__'),
     filename: '[name].js',
     sourceMapFilename: '[name].js.map',
     chunkFilename: '[id].chunk.js'
@@ -144,16 +137,16 @@ module.exports = {
       'VERSION': JSON.stringify(pkg.version)
     }),
     new OccurenceOrderPlugin(),
-    new DedupePlugin(),
-    new CommonsChunkPlugin({
-      name: 'angular2',
-      minChunks: Infinity,
-      filename: 'angular2.js'
-    }),
-    new CommonsChunkPlugin({
-      name: 'common',
-      filename: 'common.js'
-    })
+    new DedupePlugin()
+    // new CommonsChunkPlugin({
+    //   name: 'angular2',
+    //   minChunks: Infinity,
+    //   filename: 'angular2.js'
+    // }),
+    // new CommonsChunkPlugin({
+    //   name: 'common',
+    //   filename: 'common.js'
+    // })
   ],
 
   /*
