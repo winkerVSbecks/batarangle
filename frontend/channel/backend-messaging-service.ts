@@ -25,6 +25,7 @@ export class BackendMessagingService {
       console.log('Frontend: Received message from Backend: ', message);
       this.backendActions.componentDataChanged(message.data.message.payload);
     });
+
   }
 
   /**

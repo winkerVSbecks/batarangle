@@ -58,6 +58,8 @@ module.exports = {
       'angular2/router',
       'angular2/http',
       'json-formatter-js',
+      // Angular 2 ES6 browser shim
+      'es6-shim',
       // Frontend
       './frontend/batarangle'
     ],

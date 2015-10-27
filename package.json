@@ -26,7 +26,7 @@
     "remove-tsd-loader-typings": "rimraf node_modules/typescript-simple-loader/typescript-simple-loader.d.ts",
     "tsd-update": "npm run remove-tsd-loader-typings && tsd reinstall --overwrite",
     "postinstall": "npm run tsd-update && tsd install && tsd link",
-    "start": "webpack --watch"
+    "start": "rimraf build && webpack --watch"
   },
   "dependencies": {
     "@reactivex/rxjs": "5.0.0-alpha.4",
