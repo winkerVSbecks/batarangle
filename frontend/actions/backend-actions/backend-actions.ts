@@ -21,7 +21,7 @@ export class BackendActions {
   componentDataChanged(componentData) {
 
     console.log('BackendActions', componentData);
-    this.dispatcher.messageBus.onNext({
+    this.dispatcher.messageBus.next({
       actionType: BackendActionType.COMPONENT_DATA_CHANGED,
       componentData: componentData
     });

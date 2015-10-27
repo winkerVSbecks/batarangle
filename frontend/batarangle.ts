@@ -7,6 +7,7 @@ import {UserActions} from './actions/user-actions/user-actions';
 import {ComponentDataStore}
   from './stores/component-data/component-data-store';
 import {BackendMessagingService} from './channel/backend-messaging-service';
+import * as Rx from '@reactiveX/rxjs';
 
 @Component({
   selector: 'bt-app'
@@ -33,7 +34,8 @@ class App {
     });
 
     this.componentDataStore.dataStream
-      .pluck('componentData')
+      // .pluck('componentData')
+      .map(({ componentData }: any) => componentData)
       .subscribe(componentData => {
         console.log('Application Root Received: ', componentData);
         this.tree = componentData;
@@ -52,3 +54,21 @@ bootstrap(App, [
   ComponentDataStore,
   BackendMessagingService
 ]);
+
+// @Component({
+//   selector: 'bt-app'
+// })
+// @View({
+//   directives: [],
+//   template: '<h1>Angular 2 App!</h1>'
+// })
+
+// class App {
+
+//   constructor() {
+//     console.log('Application 🚀');
+//   }
+
+// }
+
+// bootstrap(App, []);

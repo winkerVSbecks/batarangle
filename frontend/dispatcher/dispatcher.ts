@@ -1,4 +1,4 @@
-import * as Rx from 'rx';
+import * as Rx from '@reactiveX/rxjs';
 
 export class Dispatcher {
 
@@ -8,9 +8,9 @@ export class Dispatcher {
     this._messageBus = new Rx.Subject<any>();
   }
 
-  onAction(actionType, onNext: (action: any) => void) {
+  onAction(actionType, next: (action: any) => void) {
     this._messageBus.filter(
-      action => action.actionType === actionType).subscribe(onNext);
+      action => action.actionType === actionType).subscribe(next);
   }
 
   get messageBus() {

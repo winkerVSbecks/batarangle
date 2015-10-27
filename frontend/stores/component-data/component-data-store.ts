@@ -1,5 +1,5 @@
 import {Injectable} from 'angular2/angular2';
-import * as Rx from 'rx';
+import * as Rx from '@reactiveX/rxjs';
 import {Dispatcher} from '../../dispatcher/dispatcher';
 import {BackendActionType, UserActionType}
   from '../../actions/action-constants';

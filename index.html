@@ -1,6 +1,39 @@
-<html>
+<!-- <html>
   <body>
     <script src="../node_modules/systemjs/dist/system.js"></script>
     <script src="system.config.js"></script>
   </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <title>Angular2 Webpack Starter by @gdi2990 from @AngularClass</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Angular2 Webpack Starter by @gdi2990 from @AngularClass">
+   <link href="node_modules/basscss/css/basscss.min.css" rel="stylesheet">
+  <!-- base url -->
+  <base href="/">
+  <!--
+    Angular 2
+    ES6 browser shim
+  -->
+  <script src="/lib/es6-shim.js"></script>
+</head>
+<body>
+
+  <bt-app>
+    Loading...
+  </bt-app>
+
+  <!-- Common files to be cached -->
+  <script src="/__build__/common.js"></script>
+  <!-- Angular2 files -->
+  <script src="/__build__/angular2.js"></script>
+  <!-- App script -->
+  <script src="/__build__/app.js"></script>
+</body>
 </html>

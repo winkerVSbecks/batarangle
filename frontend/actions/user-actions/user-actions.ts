@@ -28,7 +28,7 @@ export class UserActions {
     // Just a broadcast that this was sent.
     // But, we might want to listen to this in the future.
     // For example: show indication that request has been sent on the UI
-    this.dispatcher.messageBus.onNext({
+    this.dispatcher.messageBus.next({
       actionType: UserActionType.GET_COMPONENT_DATA
     });
 
@@ -40,7 +40,7 @@ export class UserActions {
    */
   selectNode({ node }) {
 
-    this.dispatcher.messageBus.onNext({
+    this.dispatcher.messageBus.next({
       actionType: UserActionType.SELECT_NODE,
       node
     });
@@ -53,7 +53,7 @@ export class UserActions {
    */
   searchNode({ query }) {
 
-    this.dispatcher.messageBus.onNext({
+    this.dispatcher.messageBus.next({
       actionType: UserActionType.SEARCH_NODE,
       query
     });

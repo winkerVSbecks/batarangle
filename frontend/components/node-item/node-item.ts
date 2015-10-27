@@ -9,7 +9,7 @@ import {UserActions} from '../../actions/user-actions/user-actions';
   properties: ['node: node', 'collapsed: collapsed']
 })
 @View({
-  templateUrl: 'components/node-item/node-item.html',
+  templateUrl: 'frontend/components/node-item/node-item.html',
   directives: [NgIf, NgFor, NodeItem, NgStyle]
 })
 /**
@@ -33,7 +33,8 @@ export class NodeItem {
 
     // Listen for changes to selected node
     this.componentDataStore.dataStream
-      .pluck('selectedNode')
+      // .pluck('selectedNode')
+      .map(({ selectedNode }: any) => selectedNode)
       .distinctUntilChanged((selectedNode: any) => {
         return selectedNode ? selectedNode.id : '';
       })

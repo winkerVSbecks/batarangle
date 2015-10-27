@@ -1,42 +1,20 @@
 {
+  "version": "1.6.2",
   "compilerOptions": {
-    "target": "ES5",
-    "experimentalDecorators": true,
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
     "emitDecoratorMetadata": true,
-    "module": "umd",
-    "outDir": "./.build"
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "listFiles": false,
+    "outDir": "dist"
   },
   "files": [
-    "./typings/tsd.d.ts",
-    "./devtools.ts",
-    // Component-Inspector
-    "./component-inspector/component-inspector.ts",
-    // Front-End
-    "./frontend/batarangle.ts",
-    "./frontend/components/tree-view/tree-view.ts",
-    "./frontend/components/node-item/node-item.ts",
-    "./frontend/components/info-panel/info-panel.ts",
-    // Front-End: actions
-    "./frontend/actions/action-constants.ts",
-    "./frontend/actions/backend-actions/backend-actions.ts",
-    "./frontend/actions/user-actions/user-actions.ts",
-    // Front-End:core
-    "./frontend/dispatcher/dispatcher.ts",
-    "./frontend/stores/abstract-store.ts",
-    "./frontend/stores/component-data/component-data-store.ts",
-    "./frontend/channel/backend-messaging-service.ts",
-    // Channel
-    "./channel/channel.ts",
-    // Back End
-    // Back End:adapters
-    "./backend/adapters/angular2.ts",
-    "./backend/adapters/base.ts",
-    "./backend/adapters/event_types.ts",
-    // Back End:controllers
-    "./backend/controllers/base.ts",
-    "./backend/controllers/dom.ts",
-    // Back End:core
-    "./backend/batarangle-backend.ts",
-    "./backend/entry.ts"
+    "typings/tsd.d.ts",
+    "frontend/batarangle.ts"
   ]
 }
