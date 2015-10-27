@@ -1,9 +1,11 @@
-// @AngularClass
+/**
+ * Webpack Config
+ * Based on angular2-webpack-starter by AngularClass
+ * https://github.com/angular-class/angular2-webpack-starter
+ */
 
 /*
  * Helper
- * env(), getBanner(), root(), and rootDir()
- * are defined at the bottom
  */
 var sliceArgs = Function.prototype.call.bind(Array.prototype.slice);
 var toString  = Function.prototype.call.bind(Object.prototype.toString);
@@ -44,39 +46,19 @@ module.exports = {
     reasons: true
   },
 
-  // our Development Server config
-  devServer: {
-    inline: true,
-    colors: true,
-    historyApiFallback: true,
-    contentBase: '',
-    publicPath: '/build__'
-  },
-
-  //
   entry: {
-    // 'angular2': [
-    //   // Angular 2 Deps
-    //   '@reactivex/rxjs',
-    //   'zone.js',
-    //   'reflect-metadata',
-    //   // to ensure these modules are grouped together in one file
-    //   'angular2/angular2',
-    //   'angular2/core',
-    //   'angular2/router',
-    //   'angular2/http'
-    // ],
     'app': [
       // Angular 2 Deps
       '@reactivex/rxjs',
       'zone.js',
       'reflect-metadata',
-      // to ensure these modules are grouped together in one file
+      // To ensure these modules are grouped together in one file
       'angular2/angular2',
       'angular2/core',
       'angular2/router',
       'angular2/http',
       'json-formatter-js',
+      // Frontend
       './frontend/batarangle'
     ],
     'devtools': ['./devtools'],
@@ -87,11 +69,10 @@ module.exports = {
 
   // Config for our build files
   output: {
-    path: root('build__'),
+    path: root('build'),
     filename: '[name].js',
     sourceMapFilename: '[name].js.map',
     chunkFilename: '[id].chunk.js'
-    // publicPath: 'http://mycdn.com/'
   },
 
   resolve: {
@@ -99,25 +80,11 @@ module.exports = {
     extensions: ['','.ts','.js','.json'],
     alias: {
       'rx': '@reactivex/rxjs'
-      // 'common': 'src/common',
-      // 'bindings': 'src/bindings',
-      // 'components': 'src/app/components'
-      // 'services': 'src/app/services',
-      // 'stores': 'src/app/stores'
     }
   },
 
   module: {
     loaders: [
-      // Support for *.json files.
-      { test: /\.json$/,  loader: 'json' },
-
-      // Support for CSS as raw text
-      { test: /\.css$/,   loader: 'raw' },
-
-      // support for .html as raw text
-      { test: /\.html$/,  loader: 'raw' },
-
       // Support for .ts files.
       { test: /\.ts$/,    loader: 'ts',
         query: {
@@ -149,15 +116,6 @@ module.exports = {
     }),
     new OccurenceOrderPlugin(),
     new DedupePlugin()
-    // new CommonsChunkPlugin({
-    //   name: 'angular2',
-    //   minChunks: Infinity,
-    //   filename: 'angular2.js'
-    // }),
-    // new CommonsChunkPlugin({
-    //   name: 'common',
-    //   filename: 'common.js'
-    // })
   ],
 
   /*
@@ -170,8 +128,9 @@ module.exports = {
   }
 };
 
-// Helper functions
-
+/**
+ * Utils
+ */
 function env(configEnv) {
   if (configEnv === undefined) { return configEnv; }
   switch (toString(configEnv[NODE_ENV])) {
@@ -182,16 +141,7 @@ function env(configEnv) {
   }
 }
 
-function getBanner() {
-  return 'Angular2 Webpack Starter v'+ pkg.version +' by @gdi2990 from @AngularClass';
-}
-
 function root(args) {
   args = sliceArgs(arguments, 0);
   return path.join.apply(path, [__dirname].concat(args));
-}
-
-function rootNode(args) {
-  args = sliceArgs(arguments, 0);
-  return root.apply(path, ['node_modules'].concat(args));
 }

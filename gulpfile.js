@@ -7,7 +7,7 @@ var rename = require('gulp-rename');
 var ts = require('gulp-typescript');
 var tslint = require('gulp-tslint');
 var paths = {
-  build: './.build',
+  build: './build',
   libs: './frontend/libs',
   ts: './**/*.ts'
 };

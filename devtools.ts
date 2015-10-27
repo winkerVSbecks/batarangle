@@ -4,13 +4,13 @@ import {getComponentContents} from './component-inspector/component-inspector';
  * Create Component Inspector sidebar pane on the Element panel
  * on Chrome Development Tools window.
 */
-
 chrome.devtools.panels.elements.createSidebarPane(
   'Component Inspector',
   sidebar => {
-    chrome.devtools.panels.elements.onSelectionChanged.addListener(
-      () => sidebar.setExpression('(' + getComponentContents.toString() + ')()')
-    );
+    chrome.devtools.panels.elements.onSelectionChanged.addListener(() => {
+      const components = '(' + getComponentContents.toString() + ')()';
+      return sidebar.setExpression(components);
+    });
   });
 
 /**
@@ -30,5 +30,6 @@ chrome.devtools.panels.create(
     panel.onHidden.addListener(function() {
       //console.log('i\'m gone');
     });
+
   }
 );
