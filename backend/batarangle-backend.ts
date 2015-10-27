@@ -18,15 +18,20 @@ window.addEventListener("message", function(event) {
   }
 }, false);
 
-var script = document.createElement('script');
-script.src = chrome.extension.getURL('../../../../node_modules/rx/dist/rx.all.js');
-document.documentElement.appendChild(script);
+// var script = document.createElement('script');
+// script.src = chrome.extension.getURL('../../../../node_modules/rx/dist/rx.all.js');
+// document.documentElement.appendChild(script);
 //script.parentNode.removeChild(script);
 
-var url = chrome.extension.getURL('app/js/batarangle/backend/entry.js');
-var imp = 'System.import(\'' + url + '\'); ';
-
 var script = document.createElement('script');
-script.textContent = imp;
+script.src = chrome.extension.getURL('build__/entry.js');
 document.documentElement.appendChild(script);
-//script.parentNode.removeChild(script);
+script.parentNode.removeChild(script);
+
+// var url = chrome.extension.getURL('app/js/batarangle/backend/entry.js');
+// var imp = 'System.import(\'' + url + '\'); ';
+
+// var script = document.createElement('script');
+// script.textContent = imp;
+// document.documentElement.appendChild(script);
+// //script.parentNode.removeChild(script);

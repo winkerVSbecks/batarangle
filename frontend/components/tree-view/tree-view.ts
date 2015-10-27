@@ -8,7 +8,7 @@ import {UserActions} from '../../actions/user-actions/user-actions';
   properties: ['tree: tree']
 })
 @View({
-  templateUrl: 'frontend/components/tree-view/tree-view.html',
+  templateUrl: 'components/tree-view/tree-view.html',
   directives: [NgFor, NodeItem, InfoPanel]
 })
 /**

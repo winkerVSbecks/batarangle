@@ -55,7 +55,18 @@ module.exports = {
 
   //
   entry: {
-    'angular2': [
+    // 'angular2': [
+    //   // Angular 2 Deps
+    //   '@reactivex/rxjs',
+    //   'zone.js',
+    //   'reflect-metadata',
+    //   // to ensure these modules are grouped together in one file
+    //   'angular2/angular2',
+    //   'angular2/core',
+    //   'angular2/router',
+    //   'angular2/http'
+    // ],
+    'app': [
       // Angular 2 Deps
       '@reactivex/rxjs',
       'zone.js',
@@ -64,14 +75,13 @@ module.exports = {
       'angular2/angular2',
       'angular2/core',
       'angular2/router',
-      'angular2/http'
+      'angular2/http',
+      './frontend/batarangle'
     ],
-    'app': ['./frontend/batarangle'],
-    'backend': [
-      './backend/batarangle-backend'
-    ],
-    'channel': ['channel/channel'],
-    'getComponentContents':['component-inspector/component-inspector']
+    'devtools': ['./devtools'],
+    'backend': ['./backend/batarangle-backend'],
+    'entry': ['./backend/entry'],
+    'channel': ['./channel/channel']
   },
 
   // Config for our build files

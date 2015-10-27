@@ -1,4 +1,4 @@
-import {getComponentContents} from './batarangle/component-inspector/component-inspector';
+import {getComponentContents} from './component-inspector/component-inspector';
 
 /**
  * Create Component Inspector sidebar pane on the Element panel
@@ -19,8 +19,8 @@ chrome.devtools.panels.elements.createSidebarPane(
 */
 chrome.devtools.panels.create(
   'Angular2',
-  'app/images/angular.png',
-  'app/js/batarangle/frontend/batarangle.html',
+  'images/angular.png',
+  'frontend/batarangle.html',
   panel => {
 
     panel.onShown.addListener(function(window) {

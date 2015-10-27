@@ -1,24 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-framework="angular2">
-	<head>
-		<meta charset="utf-8">
-    <script src="../../../../node_modules/systemjs/dist/system.js"></script>
-    <script src="../../../../node_modules/json-formatter-js/dist/bundle.js"></script>
-    <script src="libs/Reflect.js"></script>
-    <script src="batarangle.config.js"></script>
-    <link href="../../../../node_modules/basscss/css/basscss.min.css" rel="stylesheet">
-    <link href="../../../../node_modules/json-formatter-js/dist/style.min.css" rel="stylesheet">
-    <style type="text/css">
-      body,
-      h1, h2, h3, h4, h5, h6,
-      .h1, .h2, .h3, .h4, .h5, .h6 {
-        font-family: monospace;
-      }
-      .vh-100 { height: 100vh; }
-    </style>
-	</head>
+<head>
+  <title>Batarangle</title>
 
-	<body>
-		<bt-app></bt-app>
-	</body>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../node_modules/basscss/css/basscss.min.css" rel="stylesheet">
+  <style type="text/css">
+    body,
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-family: monospace;
+    }
+    .vh-100 { height: 100vh; }
+  </style>
+  <!--
+    Angular 2
+    ES6 browser shim
+  -->
+  <script src="../lib/es6-shim.js"></script>
+</head>
+<body>
+
+  <bt-app>
+    Loading...
+  </bt-app>
+
+  <script src="../build__/app.js"></script>
+</body>
 </html>
