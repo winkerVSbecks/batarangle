@@ -5,7 +5,7 @@
  */
 
 /*
- * Helper
+ * Helpers
  */
 var sliceArgs = Function.prototype.call.bind(Array.prototype.slice);
 var toString  = Function.prototype.call.bind(Object.prototype.toString);
@@ -28,7 +28,6 @@ var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var DedupePlugin   = webpack.optimize.DedupePlugin;
 var DefinePlugin   = webpack.DefinePlugin;
 var BannerPlugin   = webpack.BannerPlugin;
-
 
 /*
  * Config
