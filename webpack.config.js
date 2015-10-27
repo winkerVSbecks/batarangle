@@ -62,7 +62,7 @@ module.exports = {
       // Frontend
       './frontend/batarangle'
     ],
-    'devtools': ['./devtools'],
+    'devtools': ['./devtools/devtools'],
     'backend': ['./backend/batarangle-backend'],
     'entry': ['./backend/entry'],
     'channel': ['./channel/channel']

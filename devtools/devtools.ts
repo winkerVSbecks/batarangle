@@ -1,4 +1,4 @@
-import {getComponentContents} from './component-inspector/component-inspector';
+import {getComponentContents} from './component-inspector';
 
 /**
  * Create Component Inspector sidebar pane on the Element panel
