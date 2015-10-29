@@ -17,19 +17,5 @@ import {UserActions} from '../../actions/user-actions/user-actions';
 export class TreeView {
 
   private tree: any;
-  constructor(
-    private userActions: UserActions,
-    @Inject(LifeCycle) private lifeCycle: LifeCycle
-  ) {
-  }
-
-  /**
-   * Query for a node
-   * @param  {String} query
-   */
-  onChange(query) {
-    this.userActions.searchNode({ query });
-    this.lifeCycle.tick();
-  }
 
 }

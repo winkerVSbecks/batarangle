@@ -1,6 +1,6 @@
 import {Component, View, Inject, bootstrap, bind, LifeCycle}
   from 'angular2/angular2';
-import {TreeView} from './components/tree-view/tree-view';
+import {DebugPanel} from './components/debug-panel/debug-panel';
 import {Dispatcher} from './dispatcher/dispatcher';
 import {BackendActions} from './actions/backend-actions/backend-actions';
 import {UserActions} from './actions/user-actions/user-actions';
@@ -12,8 +12,8 @@ import {BackendMessagingService} from './channel/backend-messaging-service';
   selector: 'bt-app'
 })
 @View({
-  directives: [TreeView],
-  template: '<bt-tree-view [tree]="tree"></bt-tree-view>'
+  directives: [DebugPanel],
+  template: '<bt-debug-panel [tree]="tree"></bt-debug-panel>'
 })
 /**
  * Batarangle App

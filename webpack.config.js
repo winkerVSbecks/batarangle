@@ -133,16 +133,6 @@ module.exports = {
 /**
  * Utils
  */
-function env(configEnv) {
-  if (configEnv === undefined) { return configEnv; }
-  switch (toString(configEnv[NODE_ENV])) {
-    case '[object Object]'    : return Object.assign({}, configEnv.all || {}, configEnv[NODE_ENV]);
-    case '[object Array]'     : return [].concat(configEnv.all || [], configEnv[NODE_ENV]);
-    case '[object Undefined]' : return configEnv.all;
-    default                   : return configEnv[NODE_ENV];
-  }
-}
-
 function root(args) {
   args = sliceArgs(arguments, 0);
   return path.join.apply(path, [__dirname].concat(args));
